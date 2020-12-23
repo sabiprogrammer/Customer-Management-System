@@ -1,0 +1,15 @@
+{%  extends 'accounts/main.html' %}
+{% load static %}
+
+{% block content %}
+<form method="post">{%csrf_token%}
+    {{form.management_form}}
+    {% for f in form %}
+    <p>
+        {{f}}
+    </p>
+    <hr>
+    {% endfor %}
+    <input type="submit" value="Submit" name="submit">
+</form>
+{% endblock %}
